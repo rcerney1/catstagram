@@ -7,6 +7,10 @@ window.onload = () => {
     const commentList = document.getElementById('comment-list')
     const newCatButton = document.getElementById('new-cat-button')
     const upvoteButton = document.getElementById('upvote-button')
+    const meowSound = new Audio('../sounds/meow.mp3');
+    const hissSound = new Audio('../sounds/hiss.mp3');
+    const funkSound = new Audio('../sounds/funk.mp3');
+    
     
     const downvoteButton = document.getElementById('downvote-button')
     const commentButton = document.getElementById('comment-button')
@@ -53,9 +57,10 @@ window.onload = () => {
                 score = 0;
                 commentList.innerHTML = '';
                 scoreDisplay.innerText = `Popularity Score: ${score}`
+                funkSound.play();
                 setTimeout(()=> {
                     catImage.classList.remove('rotate')
-                }, 1000);
+                }, 3000);
                 saveStateToLocalStorage();
             })
             .catch(error => console.error("we made a boo boo", error))
@@ -66,6 +71,9 @@ window.onload = () => {
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Event Listeners~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+
+ 
+
     //event listener for clicking newCatButton
     newCatButton.addEventListener('click', fetchCatImage);
 
@@ -73,7 +81,8 @@ window.onload = () => {
     upvoteButton.addEventListener('click', () => {
         //animation
         score++;
-        scoreDisplay.innerText = `Popularity Score: ${score}`
+        scoreDisplay.innerText = `Popularity Score: ${score}`;
+        meowSound.play();
         saveStateToLocalStorage();
     })
 
@@ -81,6 +90,7 @@ window.onload = () => {
         if(score > 0){
             score--;
             scoreDisplay.innerText = `Popularity Score: ${score}`
+            hissSound.play();
             saveStateToLocalStorage();
         }
     })

@@ -135,5 +135,6 @@ button:hover {
 }
 
 #cat-image.rotate {
-    animation: rotate 1s ease-out;
+    animation: rotate 3s ease-out;
 }
+
