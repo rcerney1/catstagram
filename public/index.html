@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catstagram</title>
+  <link rel = "stylesheet" href ="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Header -->
+    <h1>Cat.</h1>
+
+    <!-- Container for the image -->
+    <div id="image-container">
+        <img id="cat-image" src="" alt="Cat Image">
+    </div>
+
+    <!-- Button to fetch new cats -->
+    <button id="new-cat-button">Click For A New Cat Yo</button>
+
+    <!-- Upvotes, downvotes, and scores -->
+    <div id="score-container">
+        <span id="score-display">Popularity Score: 0</span>
+    </div>
+    <div id="button-container">
+        <button id="upvote-button">Upvote</button>
+        <button id="downvote-button">Downvote</button>
+    </div>
+
+    <!-- Comments section -->
+    <div id="comment-section">
+        <p>Comment: </p>
+        <input type="text" id="comment-input" placeholder="Add a comment">
+        <button id="comment-button">Submit</button>
+    </div>
+    <ul id="comment-list"></ul>
+</div>
+  <script src = './index.js'></script>
+</body>
+
+</html>
