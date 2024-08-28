@@ -68,6 +68,15 @@ button {
     margin: 0;
 }
 
+#comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 600px; /* Adjust this value as needed */
+}
+
 #comment-section {
     margin-top: 20px;
     padding: 10px;

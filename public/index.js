@@ -43,6 +43,7 @@ window.onload = () => {
             state.comments.forEach(commentText => {
                 const commentItem = document.createElement('li');
                 commentItem.innerText = commentText;
+                commentItem.className = 'comment'
                 commentList.appendChild(commentItem);
             });
         } else {
