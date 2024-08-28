@@ -3,20 +3,24 @@ window.onload = () => {
     const app = document.getElementById('app');
     //create items
     const catImage = document.getElementById('cat-image')
-    const scoreDisplay = document.getElementById('score-display')
-    const commentList = document.getElementById('comment-list')
-    const newCatButton = document.getElementById('new-cat-button')
-    const upvoteButton = document.getElementById('upvote-button')
-    const meowSound = new Audio('../sounds/meow.mp3');
-    const hissSound = new Audio('../sounds/hiss.mp3');
+    const scoreDisplay = document.getElementById('score-display');
+    const commentList = document.getElementById('comment-list');
+    const newCatButton = document.getElementById('new-cat-button');
+    const upvoteButton = document.getElementById('upvote-button');
+    const opButton = document.getElementById('opButton');
+    const onePiece = new Audio('../sounds/one-piece-made-with-Voicemod.mp3');
+    const meow2Sound = new Audio('../sounds/meow2.mp3');
+    const hissSound = new Audio('../sounds/hissing.mp3');
     const funkSound = new Audio('../sounds/funk.mp3');
+
     
     
     const downvoteButton = document.getElementById('downvote-button')
     const commentButton = document.getElementById('comment-button')
     const commentInput = document.getElementById('comment-input')
     let score = 0;
-     
+    
+    
     // Function to save state to localStorage
     const saveStateToLocalStorage = () => {
         //create a json object for the current state
@@ -48,6 +52,7 @@ window.onload = () => {
 
      //create fetch for cat API
      const fetchCatImage = () => {
+        funkSound.play();
         catImage.classList.add('rotate');
         fetch('https://api.thecatapi.com/v1/images/search')
             .then(response => response.json())
@@ -57,7 +62,6 @@ window.onload = () => {
                 score = 0;
                 commentList.innerHTML = '';
                 scoreDisplay.innerText = `Popularity Score: ${score}`
-                funkSound.play();
                 setTimeout(()=> {
                     catImage.classList.remove('rotate')
                 }, 3000);
@@ -77,12 +81,17 @@ window.onload = () => {
     //event listener for clicking newCatButton
     newCatButton.addEventListener('click', fetchCatImage);
 
+    //op
+    opButton.addEventListener('click', () => {
+        onePiece.play();
+    })
+
     //upvote/downvote event listener
     upvoteButton.addEventListener('click', () => {
         //animation
         score++;
         scoreDisplay.innerText = `Popularity Score: ${score}`;
-        meowSound.play();
+        meow2Sound.play();
         saveStateToLocalStorage();
     })
 

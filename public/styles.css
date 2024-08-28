@@ -122,6 +122,40 @@ button:hover {
 }
 
 
+#opButton {
+    width: 100px; /* Set desired width */
+    height: 50px; /* Set height for the top of the hat */
+    background-color: #F4C542; /* Straw-like color */
+    border-radius: 50px 50px 0 0; /* Rounded top edges */
+    border: 3px solid #D2A72D; /* Darker border for a straw effect */
+    border-bottom: 4px solid red;
+    position: relative; /* To position the brim and line */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #4D331C; /* Darker text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+#opButton::before {
+    content: '';
+    position: absolute;
+    top: 107%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px; /* Brim width, wider than the button */
+    height: 10px; /* Brim height */
+    background-color: #F4C542;
+    border: 3px solid #D2A72D; /* Same border as the button */
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Shadow for the brim */
+}
+
+
+
+
 
 
 /* Keyframes for rotation animation */
