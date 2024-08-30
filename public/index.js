@@ -112,7 +112,7 @@ window.onload = () => {
             const newComment = document.createElement('li');
             newComment.className = 'comment'
             newComment.innerText = commentText;
-            commentList.appendChild(newComment);
+            commentList.insertBefore(newComment, commentList.firstChild); //insertBefore so new comments show up first in the commentList
             commentInput.value = '';
             saveStateToLocalStorage();
         }
